@@ -19,7 +19,7 @@ Interfaces:
 - `python manage.py runserver`
 
 ## API
-###Endpoint: 
+### Endpoint: 
 - http://localhost:8000/api/
 ### QueryString: 
 - sentence (string)
