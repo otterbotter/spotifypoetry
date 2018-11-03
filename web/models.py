@@ -3,7 +3,6 @@ from datetime import timedelta
 import requests
 from django.db import models
 from django.utils import timezone
-# Create your models here.
 from spotifypoetry.settings import SPOTIFY_API_URL, SPOTIFY_CLIENT_ID, SPOTIFY_CLIENT_SECRET
 
 
@@ -28,8 +27,6 @@ class SingletonModel(models.Model):
 class Track(models.Model):
     title = models.CharField(max_length=256)
     external_url = models.URLField()
-
-# TODO: singleton
 
 
 class Token(SingletonModel):

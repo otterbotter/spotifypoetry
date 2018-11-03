@@ -1,6 +1,8 @@
 # spotifypoetry
 
 ## Description
+Django project to create spotify poems.
+
 Takes a sentence as input, and outputs a list of spotify URLs.
 The songs in sequence spell out the original sentence.
 
