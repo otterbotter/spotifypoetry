@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path('', views.SearchView.as_view(), name="search"),
+    path('api/', views.search_api, name="search_api"),
 
 ]
