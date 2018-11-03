@@ -12,6 +12,7 @@ Interfaces:
 - clone repo
 - set up virtualenv in python 3.5+ 
 - `pip install -r requirements.txt`
+- Edit settings.py and insert your spotify `CLIENT ID` and `SECRET`
 - `python manage.py migrate`
 - `python manage.py runserver`
 
