@@ -30,14 +30,15 @@ class Track(models.Model):
 
 
 class Token(SingletonModel):
-    expiry_datetime = models.DateTimeField(default=timezone.now())
+    expiry_datetime = models.DateTimeField(default=timezone.now)
     token_string = models.CharField(max_length=128, unique=True)
+
     @property
     def token(self):
         now = timezone.now()
-        time_since_expiry = now - self.expiry_datetime
-        if time_since_expiry > timedelta(seconds=600):
+        if now > self.expiry_datetime:
             self.token_string = self._request_token()
+            self.expiry_datetime = now + timedelta(hours=1)
             print("Got new token string: {}".format(self.token_string))
             return self.token_string
 
@@ -57,4 +58,4 @@ class Token(SingletonModel):
             return response.json()['access_token']
 
         except (KeyError, TypeError):
-            raise
+            raise Exception("Invalid Spotify credentials - we were not able to retrieve a token.")

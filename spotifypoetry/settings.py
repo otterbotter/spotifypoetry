@@ -119,6 +119,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-SPOTIFY_CLIENT_ID = 'CLIENTID'
-SPOTIFY_CLIENT_SECRET = 'SECRET'
 SPOTIFY_API_URL = 'https://accounts.spotify.com/api/token'
+SPOTIFY_CLIENT_ID = os.getenv('CLIENT_ID', None)
+SPOTIFY_CLIENT_SECRET = os.getenv('SECRET', None)
+
+if not (SPOTIFY_CLIENT_ID or SPOTIFY_CLIENT_SECRET):
+    raise Exception("Please provide CLIENT_ID and SECRET as environment variables.")

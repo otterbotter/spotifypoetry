@@ -21,7 +21,7 @@ class SearchView(FormView):
         playlist = form.generate_playlist(form.cleaned_data.get('sentence', ''))
         html = "<html>"
         for url in playlist:
-            html += "<a href="+url+">"+url+"</a>"
+            html += "<p><a href="+url+">"+url+"</a></p>"
         html += "</html>"
         return HttpResponse(html)
 

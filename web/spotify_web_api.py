@@ -37,7 +37,6 @@ def _split_sentence(l, splits):
             output += [l[index:next_spot]]
         else:
             output += [l[index:]]
-    print(output)
     return output
 
 
@@ -55,6 +54,7 @@ def generate_playlist(sentence):
             indexes = [0, ] + list(c)
             playlist = [' '.join(x) for x in _split_sentence(words_split, indexes)]
             urls = _get_playlist_urls(playlist, token=token)
+            print(playlist)
             print(urls)
             if None not in urls:
                 return urls
