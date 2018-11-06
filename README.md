@@ -12,7 +12,7 @@ Interfaces:
 
 ## Docker
 I've built a docker image, which can be run on your local machine.
-`jaronrademeyer/spotifypoetry`
+`docker pull jaronrademeyer/spotifypoetry`
 
 The docker container requires 4 parameters at runtime:
 1) Map local port 8000 to container port 8000
